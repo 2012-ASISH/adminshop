@@ -1,0 +1,40 @@
+myscript.js
+-----------
+function Shopping()
+{
+    this.productId=new Array(2);
+this.productName=new Array(2);
+this.productPrice=new Array(2);
+this.addProduct=()=>{
+    for(i=0;i<2;i++)
+    {
+pid=document.getElementById("pid").value;
+pname=document.getElementById("pname").value;
+price=document.getElementById("price").value;
+this.productId=pid;
+this.productName=pname;
+this.productPrice=price;
+}
+console.log(this.productId+" "+this.productName+" "+this.productPrice)
+alert("Product added successfully...")
+}
+this.displayProduct=()=>{
+    document.getElementById("abc").innerHTML+=this.productId+" "+this.productName+" "+this.productPrice+"<br/>";
+}
+}
+var sh=new Shopping();
+
+Demo.html
+--------------
+
+<html>
+    <script src="./myscript.js"></script>
+    <body bgcolor="yellow">
+        <p id="abc"></p>
+        Enter product Id :<input type="text" id="pid"/><br/>
+        Enter product Name : <input type="text" id="pname"/><br/>
+        Enter product Price : <input type="text" id="price"/><br/>
+        <button onclick="sh.addProduct()">Add Product</button>
+        <button onclick="sh.displayProduct()">Display All Product</button>
+</body>
+</html>
